@@ -24,7 +24,7 @@ public class BookController {
         List<BookWapper> booksList = new ArrayList<>();
 
         for (Book book : bookDao.findAll()) {
-            booksList.add(new BookWapper(book.getId(), book.getTitle(),book.getAuthor(),book.getTheme()));
+            booksList.add(new BookWapper(book.getId(), book.getTitle(), book.getAuthor(), book.getTheme()));
         }
         return booksList;
     }

@@ -93,8 +93,6 @@ public class LibraryIT {
         assertArrayEquals(new String[] {"Infantil"}, styleDao.findByNameStartingWith("In").toArray());
     }
 
-
-
  
     @After
     public void deleteAll() {

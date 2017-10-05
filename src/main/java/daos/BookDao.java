@@ -16,7 +16,9 @@ public interface BookDao extends JpaRepository<Book,Integer>{
 	
 	//Consulta: SQL
 	//@Query(value ="select title from Book where title like ?1", nativeQuery = true)
-	 List<String> findByTitle(String title);
+  
+    List<String> findById(String id);
+	List<String> findByTitle(String title);
 	 
 		
 	 @Query("select b.title from Book b where b.title like ?1%")

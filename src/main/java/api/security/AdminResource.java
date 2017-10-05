@@ -1,6 +1,7 @@
 package api.security;
 
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,7 +14,7 @@ public class AdminResource {
 
 
     @RequestMapping(method = RequestMethod.GET)
-    //@PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN')")
     public String admin(String param) {
         return "{\"admin\":\"" + Uris.ADMIN + "\"}";
     }

@@ -32,9 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
          //withUser("111").password("111").roles("ADMIN").and().
          //withUser("222").password("222").roles("MANAGER").and().
          //withUser("333").password("333").roles("ADMIN","MANAGER");
-         
-         
-    
+          
     }
 
     
@@ -42,10 +40,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable().authorizeRequests()//
-                .antMatchers(HttpMethod.GET, Uris.SERVLET_MAP + Uris.VERSION).permitAll()
+                .antMatchers(HttpMethod.GET, Uris.SERVLET_MAP + Uris.VERSION + "/**").permitAll()
+               // .antMatchers(HttpMethod.GET, Uris.SERVLET_MAP + Uris.VERSION + Uris.BOOKS).hasRole(Role.ADMIN.name())
                /* .antMatchers(HttpMethod.GET, Uris.SERVLET_MAP + Uris.VERSION + Uris.ALL).permitAll()//
                 .antMatchers(HttpMethod.GET, Uris.SERVLET_MAP + Uris.VERSION + Uris.AUTHENTICATED).authenticated()
-                .antMatchers(HttpMethod.GET, Uris.SERVLET_MAP + Uris.VERSION + Uris.ADMIN).hasRole(Role.ADMIN.name())
+                
                 .antMatchers(HttpMethod.GET, Uris.SERVLET_MAP + Uris.VERSION + Uris.MANAGER).hasRole(Role.MANAGER.name()) */
                 .and().httpBasic();//
     }

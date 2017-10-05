@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import controllers.BookController;
 import wrappers.BookWapper;
 
+
 @RestController
 @RequestMapping(Uris.VERSION + Uris.BOOKS)
 public class BookResource {
@@ -24,9 +25,11 @@ public class BookResource {
 
 
     @RequestMapping(method = RequestMethod.GET)
-	public List<BookWapper> bookList(String param) {
+	public List<BookWapper> bookList() {
         return bookController.allBooks() ;
-		
-	}
+    }
+    
+
+    
 
 }

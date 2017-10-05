@@ -1,6 +1,5 @@
 package api;
 
-
 import org.apache.logging.log4j.LogManager;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -15,8 +14,6 @@ import api.exceptions.InvalidUserFieldException;
 import api.exceptions.MalformedHeaderException;
 import api.exceptions.NotFoundUserIdException;
 import api.exceptions.UnauthorizedException;
-
-
 
 @ControllerAdvice
 public class ApiExceptionHandler {

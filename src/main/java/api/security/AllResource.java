@@ -11,10 +11,9 @@ import api.Uris;
 public class AllResource {
 
     @RequestMapping(method = RequestMethod.GET)
-    // @PreAuthorize("hasRole('ADMIN')")
     public String all(String param) {
-       // return "{\"all\":\"" + Uris.ALL + "\"}";
-        return "{\r\n  \"results\": [\r\n    \"Item 1\",\r\n    \"Item 2\",\r\n  ]\r\n}";
+        return "{\"all\":\"" + Uris.ALL + "\"}";
+      
    
         
     }
